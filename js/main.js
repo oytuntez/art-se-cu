@@ -13,7 +13,7 @@
         "not welcomed, lined up around a pole,\n",
         "line-break, line breaks, you destroy, you\n",
         "kill. your lawfully protected murder, now goes\n",
-        "				AWAY? HUH, NO.\n",
+        "												AWAY? HUH, NO.\n",
         "towards the west, accepting their imperative.\n",
         "but still to the west with paramounts. we bleed\n",
         "you what, you laugh. oh, this tabula rasa.\n",
@@ -22,41 +22,41 @@
         "are full with color and whatever you oppose\n",
         "but it’s your hatred: sitting next to each other,\n",
         "fucking and merging after each other, ayyy\n",
-        "				SƐKJƏLƏRɪZƏM\n",
+        "												SƐKJƏLƏRɪZƏM\n",
         "where I am looking at, ay, ay, so gray your mind\n",
-        "				but your eyes\n",
-        "				but your eyes\n"
+        "												but your eyes\n",
+        "												but your eyes\n"
     ];
     // Psuedo translation
     var arabicPoemLines = [
-        "عبد المنعم يوسف، ayy، حد ذاتها، ayy! SECU.",
+        ".ايه، ايهه، علـ، ايهه! علمان",
         "",
-        "حتى يوم واحد، وربما صبي أو فتاة،",
-        "على الأرجح ليس androgyn.",
-        "أتوا؛ لم يذهبون؟ واضحة.",
-        "تأتي، فإنها يجب أن يكون، لأسباب معروفة.",
+        "،فيَوم مِن الأيّام، يمكن صَبي أو بنتْ",
+        ".بسْ على الأرجح مش شَخص مُخنّتْ",
+        ".يمكن يوصلوا للسلطة؛ راحُوا يا تُرى؟ واضحْ",
+        ".وصلوا، أكيد، لأسبَاب مَعروفة",
         "",
-        "ayy، secul. بما فيه الكفاية، عبد المنعم يوسف المنعم يوسف عبد المنعم يوسف، علمانية.",
+        ".ايه، علمانـ؛ بِكفّي، اي اي اي، علمَاني",
         "",
-        "لا رحبت، واصطف حول قطب،",
-        "خط فاصل، يكسر خط، كنت تدمير، ل",
-        "قتل. لديك القتل محمية بشكل قانوني، يذهب الآن",
-        "بعيدا؟ هوه، NO.",
-        "نحو الغرب، وقبول حتمية بهم.",
-        "ولكن لا يزال إلى الغرب مع paramounts. نحن تنزف",
-        "لك ما، كنت أضحك. أوه، هذه الصفيحة راسا.",
-        "حبيبتي '، التي لا تعمل بالنسبة لك، والألواح لدينا",
-        "هنا",
-        "مليئة بالألوان ومهما كنت تعارض",
-        "ولكن هذا كراهيتك: يجلس بجانب بعضها البعض،",
-        "سخيف ودمج بعد بعضها البعض، ayyy",
-        "SƐKJƏLƏRɪZƏM",
-        "حيث أنا أبحث في، آه، آه، حتى الرمادي عقلك",
-        "لكن عينيك",
-        "لكن عينيك"
+        "،غير مرحّب فينا: الأحرار، ربطونا حول عَمود",
+        "سطرْ جديد، انقطعَ الحبل، أنتو بتدمِّرو، أنتو",
+        "بتقْـتلو. جريمْتكمْ المَحْميِّة بالقانون الآن",
+        "         .ستذهبُ لبعيد؟ هه، لا",
+        "نحْوَ الغرب، و أنتو قبلانين هَيْمَنته",
+        "على الدوام نحْوَ الغربْ صاحب القيم. بينْزل منّا",
+        ".الدّمّ، أنتو شو، أنتو بتضْحكو. آه، سبّورة المعرفة العَذراء",
+        "حبيباتي، لم تتوفقوا فيها، لوائحنا",
+        "هُنَا",
+        "مليانة ألوانْ و بكلْ شي أنتو بتعارضوهْ",
+        "،لكن كَراهياتكمْ: أشكالْ و ألوانْ قاعدة معَ بعض",
+        "عمْ بتنيك و تختلط ببَعض لتكبَرْ، ايه",
+        "												SƐKJƏLƏRɪZƏM",
+        "أينما نَظَرْتُ، ايه، ايه، عقلْكمْ شايب كتيرْ",
+        " لكنْ عُيونكم يا قَـتلة الحُرِّيَّات",
+        "                  لكنْ عُيونكم"
     ];
 
-    var signature = "Oytun Tez © 2016, Manhattan";
+    var signature = "Oytun Tez © 2017, Manhattan";
     var fontFamily = '"Lucida Console", Monaco, monospace';
     var poemTextOptions = {
         fontFamily: fontFamily,
@@ -69,8 +69,10 @@
         hasBorders: false
     };
     var arabicPoemTextOptions = {
-        fill: '#ccc',
-        fontFamily: fontFamily,
+        fill: '#bbb',
+        //textBackgroundColor: 'blue',
+        //backgroundColor: 'red',
+        fontFamily: 'Cairo',
         fontSize: 15,
         lineHeight: 1.6,
         selectable: false,
@@ -83,8 +85,18 @@
     var arabicPoemLinePadding = 10;
     var arabicLineAnimationCharacterSpeed = 100;
     var arabicLineGroup = [];
+    var arabicPoemDelay = 1; //15
 
     function initialize() {
+        WebFont.load({
+            google: {
+                families: ['Aref Ruqaa']
+            },
+            fontloading: start
+        });
+    }
+
+    function start() {
         canvas = new fabric.Canvas('c', {
             selection: false
         });
@@ -95,7 +107,9 @@
         placeSignature();
         placePoem();
 
-        setTimeout(animateArabicPoem, 15000);
+        canvas.renderAll();
+
+        setTimeout(animateArabicPoem, (arabicPoemDelay*1000));
     }
 
     function placePoem() {
@@ -137,8 +151,20 @@
     }
 
     function putArabicLine(line, englishLineOptions) {
-        var text = new fabric.Text(line, arabicPoemTextOptions);
-        var rect = new fabric.Rect({ width: text.getWidth(), height: text.getHeight(), fill: 'white', opacity: 1 });
+        var options = Object.create(arabicPoemTextOptions);
+
+        if(line[0] === "	" || line[0] === " ") {
+            options = Object.create(options);
+            options.fill = "#e48d8d";
+        }
+
+        var text = new fabric.Text(line, options);
+        var rect = new fabric.Rect({
+            width: text.getWidth(),
+            height: text.getHeight(),
+            fill: 'white',
+            opacity: 1
+        });
 
         var group = new fabric.Group([text, rect], {
             left: 0,
