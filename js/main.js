@@ -85,7 +85,7 @@
     var arabicPoemLinePadding = 10;
     var arabicLineAnimationCharacterSpeed = 100;
     var arabicLineGroup = [];
-    var arabicPoemDelay = 15;
+    var arabicPoemDelay = 8;
 
     function initialize() {
         WebFontConfig = {
