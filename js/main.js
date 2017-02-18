@@ -4,7 +4,7 @@
         "ay, ayy, se, ayy! secu.\n",
         "\n",
         "so one day, maybe a boy or a girl,\n",
-        "most probably not an androgyn.\n",
+        "most probably not an androgyne.\n",
         "they came; did they go? apparent.\n",
         "come, they must have, for known reasons.\n",
         "\n",
@@ -29,31 +29,31 @@
     ];
     // Psuedo translation
     var arabicPoemLines = [
-        ".ايه، ايهه، علـ، ايهه! علمان",
+        "																						.ايه، ايهه، علـ، ايهه! علمان",
         "",
-        "،فيَوم مِن الأيّام، يمكن صَبي أو بنتْ",
-        ".بسْ على الأرجح مش شَخص مُخنّتْ",
-        ".يمكن يوصلوا للسلطة؛ راحُوا يا تُرى؟ واضحْ",
-        ".وصلوا، أكيد، لأسبَاب مَعروفة",
+        "																																				،فيَوم مِن الأيّام، يمكن صَبي أو بنتْ",
+        "																										.بسْ على الأرجح مش شَخص مُخنّتْ",
+        "																									.يمكن يوصلوا للسلطة؛ راحُوا يا تُرى؟ واضحْ",
+        "																																																											.وصلوا، أكيد، لأسبَاب مَعروفة",
         "",
-        ".ايه، علمانـ؛ بِكفّي، اي اي اي، علمَاني",
+        "																																												.ايه، علمانـ؛ بِكفّي، اي اي اي، علمَاني",
         "",
-        "،غير مرحّب فينا: الأحرار، ربطونا حول عَمود",
-        "سطرْ جديد، انقطعَ الحبل، أنتو بتدمِّرو، أنتو",
-        "بتقْـتلو. جريمْتكمْ المَحْميِّة بالقانون الآن",
-        "         .ستذهبُ لبعيد؟ هه، لا",
-        "نحْوَ الغرب، و أنتو قبلانين هَيْمَنته",
-        "على الدوام نحْوَ الغربْ صاحب القيم. بينْزل منّا",
-        ".الدّمّ، أنتو شو، أنتو بتضْحكو. آه، سبّورة المعرفة العَذراء",
-        "حبيباتي، لم تتوفقوا فيها، لوائحنا",
-        "هُنَا",
-        "مليانة ألوانْ و بكلْ شي أنتو بتعارضوهْ",
-        "،لكن كَراهياتكمْ: أشكالْ و ألوانْ قاعدة معَ بعض",
-        "عمْ بتنيك و تختلط ببَعض لتكبَرْ، ايه",
-        "												SƐKJƏLƏRɪZƏM",
-        "أينما نَظَرْتُ، ايه، ايه، عقلْكمْ شايب كتيرْ",
-        " لكنْ عُيونكم يا قَـتلة الحُرِّيَّات",
-        "                  لكنْ عُيونكم"
+        "																																		،غير مرحّب فينا: الأحرار، ربطونا حول عَمود",
+        "																																												سطرْ جديد، انقطعَ الحبل، أنتو بتدمِّرو، أنتو",
+        "																																																											بتقْـتلو. جريمْتكمْ المَحْميِّة بالقانون الآن",
+        "																							         .ستذهبُ لبعيد؟ هه، لا",
+        "																																																																نحْوَ الغرب، و أنتو قبلانين هَيْمَنته",
+        "																																																					على الدوام نحْوَ الغربْ صاحب القيم. بينْزل منّا",
+        "																																	.الدّمّ، أنتو شو، أنتو بتضْحكو. آه، سبّورة المعرفة العَذراء",
+        "																																																																		حبيباتي، لم تتوفقوا فيها، لوائحنا",
+        "						هُنَا",
+        "																																																									مليانة ألوانْ و بكلْ شي أنتو بتعارضوهْ",
+        "																																																										،لكن كَراهياتكمْ: أشكالْ و ألوانْ قاعدة معَ بعض",
+        "																																																					عمْ بتنيك و تختلط ببَعض لتكبَرْ، ايه",
+        "																													 SƐKJƏLƏRɪZƏM",
+        "																																																																	أينما نَظَرْتُ، ايه، ايه، عقلْكمْ شايب كتيرْ",
+        "																						 لكنْ عُيونكم يا قَـتلة الحُرِّيَّات",
+        " 																										                 لكنْ عُيونكم"
     ];
 
     var signature = "Oytun Tez © 2017, Manhattan";
@@ -72,7 +72,7 @@
         fill: '#bbb',
         //textBackgroundColor: 'blue',
         //backgroundColor: 'red',
-        fontFamily: 'Cairo',
+        fontFamily: 'Mirza',
         fontSize: 15,
         lineHeight: 1.6,
         selectable: false,
@@ -85,15 +85,22 @@
     var arabicPoemLinePadding = 10;
     var arabicLineAnimationCharacterSpeed = 100;
     var arabicLineGroup = [];
-    var arabicPoemDelay = 1; //15
+    var arabicPoemDelay = 15;
 
     function initialize() {
-        WebFont.load({
+        WebFontConfig = {
             google: {
-                families: ['Aref Ruqaa']
+                families: [arabicPoemTextOptions.fontFamily]
             },
-            fontloading: start
-        });
+            fontinactive: function(familyName, fvd) {
+                console.log("Sorry " + familyName + " font family can't be loaded at the moment. Retry later.");
+            },
+            fontactive: function(a, b) {
+                console.log(a, b);
+                setTimeout(start, 1);
+            }
+        };
+        WebFont.load(WebFontConfig);
     }
 
     function start() {
@@ -119,8 +126,8 @@
 
         for(var i = 0; i < poemLines.length; i++) {
             options.top += poemLinePadding;
-            putLine(poemLines[i], options);
-            putArabicLine(arabicPoemLines[i], options);
+            var line = putLine(poemLines[i], options);
+            putArabicLine(arabicPoemLines[i], options, line);
         }
     }
     
@@ -137,6 +144,8 @@
         if(line.length === 1) {
             putSeparator(options);
         }
+
+        return text;
     }
 
     function putSeparator(options) {
@@ -150,7 +159,7 @@
         canvas.add(separator);
     }
 
-    function putArabicLine(line, englishLineOptions) {
+    function putArabicLine(line, englishLineOptions, englishLine) {
         var options = Object.create(arabicPoemTextOptions);
 
         if(line[0] === "	" || line[0] === " ") {
@@ -167,7 +176,7 @@
         });
 
         var group = new fabric.Group([text, rect], {
-            left: 0,
+            left: (englishLine.getLeft()),
             top: englishLineOptions.top+arabicPoemLinePadding,
             selectable: false,
             hoverCursor: 'default',
@@ -180,6 +189,8 @@
 
         canvas.add(group);
         group.moveTo(1);
+
+        return arabicLineGroup;
     }
 
     function animateArabicPoem(groupIndex) {
