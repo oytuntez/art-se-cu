@@ -56,7 +56,7 @@
         " 																										                 لكنْ عُيونكم"
     ];
 
-    var signature = "Oytun Tez © 2017, Manhattan";
+    var signature = "Oytun Tez © 2017, Manhattan - Arabic Translation: Յարութ Կ. Վարդանեան";
     var fontFamily = '"Lucida Console", Monaco, monospace';
     var poemTextOptions = {
         fontFamily: fontFamily,
@@ -215,7 +215,7 @@
 
     function placeSignature() {
         var textOptions = {
-            left: 350,
+            left: 150,
             top: 980,
             fontFamily: 'Arial',
             fontSize: 10,
