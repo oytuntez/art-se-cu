@@ -92,11 +92,7 @@
             google: {
                 families: [arabicPoemTextOptions.fontFamily]
             },
-            fontinactive: function(familyName, fvd) {
-                console.log("Sorry " + familyName + " font family can't be loaded at the moment. Retry later.");
-            },
             fontactive: function(a, b) {
-                console.log(a, b);
                 setTimeout(start, 1);
             }
         };
